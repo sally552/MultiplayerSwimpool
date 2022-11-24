@@ -27,11 +27,11 @@ public class NetworkConnectionManager : MonoBehaviour
         var connect = (networkManager.IsClient || networkManager.IsServer);
         if (!connect)
         {
-            Debug.Log("Sally gg");
-             m_IPToConnectTo = GUILayout.TextField(m_IPToConnectTo);
-             _port = ushort.Parse(GUILayout.TextField(_port.ToString()));
-
 #if UNITY_EDITOR
+            m_IPToConnectTo = GUILayout.TextField(m_IPToConnectTo);
+            _port = ushort.Parse(GUILayout.TextField(_port.ToString()));
+
+
             if (GUILayout.Button("Host"))
             {
                 (networkManager.NetworkConfig.NetworkTransport as UnityTransport).SetConnectionData(m_IPToConnectTo, _port);
@@ -41,7 +41,6 @@ public class NetworkConnectionManager : MonoBehaviour
 #if CLIENT || UNITY_EDITOR
             if (GUILayout.Button("Client"))
             {
-
                 (networkManager.NetworkConfig.NetworkTransport as UnityTransport).SetConnectionData(m_IPToConnectTo, _port);
                 networkManager.StartClient();
             }
@@ -49,7 +48,6 @@ public class NetworkConnectionManager : MonoBehaviour
 #if SERVER || UNITY_EDITOR
             if (GUILayout.Button("Server"))
             {
-
                 (networkManager.NetworkConfig.NetworkTransport as UnityTransport).SetConnectionData(m_IPToConnectTo, _port);
                 networkManager.StartServer();
             }
