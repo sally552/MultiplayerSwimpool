@@ -54,6 +54,7 @@ public class ServerTeleportPlayerAction : NetworkBehaviour, ITeleportAction, ICo
     public override void OnDestroy()
     {
         TeleportEvent -= _swimpool.PlayerActionOnInsideSwimpool;
+        CollisionActionEvent -= _swimpool.PlayerActionOnInsideSwimpool;
         base.OnDestroy();
     }
 

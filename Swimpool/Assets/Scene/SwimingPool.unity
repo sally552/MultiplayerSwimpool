@@ -271,7 +271,7 @@ Transform:
   - {fileID: 1757562088}
   - {fileID: 1677536702}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &367499382
 GameObject:
@@ -410,9 +410,9 @@ MonoBehaviour:
   m_MaxConnectAttempts: 60
   m_DisconnectTimeoutMS: 30000
   ConnectionData:
-    Address: 127.0.0.1
-    Port: 9998
-    ServerListenAddress: 
+    Address: 79.139.162.172
+    Port: 7777
+    ServerListenAddress: 0.0.0.0
   DebugSimulator:
     PacketDelayMS: 0
     PacketJitterMS: 0
@@ -470,7 +470,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &607872649
 MonoBehaviour:
@@ -484,6 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12c8e5abda766134885e74aa8c80af18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _adress: {fileID: 11400000, guid: 0e2452f7e2de14f4e945ef70095d229e, type: 2}
 --- !u!1 &859323309 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8099585052275364893, guid: 3676b6dd73cd36446aba696772662515,
@@ -502,7 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1629244385
+  GlobalObjectIdHash: 1820619680
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
@@ -959,7 +960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2812080554
+  GlobalObjectIdHash: 2708006328
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
