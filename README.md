@@ -4,6 +4,10 @@
 Что сделано: 
 1) управление. WASD для ходьбы. E - для телепортации в бассейн, если свободно.
 2) бассейн. шейдер воды(блики, искажение, волны). бортик бассейна, при нахождении в бассейне человека, становится желтым.
+![grab-landing-page](https://github.com/sally552/MultiplayerSwimpool/blob/main/GitResource/Bliki.gif)
+![](http://www.reactiongifs.us/wp-content/uploads/2013/10/nuh_uh_conan_obrien.gif)
+![](https://github.com/sally552/MultiplayerSwimpool/blob/main/GitResource/app.jpg)
+![](https://github.com/sally552/MultiplayerSwimpool/blob/main/GitResource/app1.jpg)
 3) бассейн имеет состояния, теоретически можно добавлять больше состояний.
 4) как мне кажется, разделение на серверную и клиентскую часть.
 5) в редакторе в меню есть разделение(переключение) на СЕРВЕР и КЛИЕНТ. Введены соответствующие условные символы сценариев: #SERVER и #CLIENT
