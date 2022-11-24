@@ -9,6 +9,14 @@ public class NetworkConnectionManager : MonoBehaviour
     //TODO в редакторе ручками подставлять или ручками вбивать
     [SerializeField]
     private ConnectionAdress _adress;
+    private string m_IPToConnectTo;
+    private ushort _port;
+
+    private void Awake()
+    {
+        m_IPToConnectTo = _adress.AddressData.Address;
+        _port = _adress.AddressData.Port;
+    }
 
     private void OnGUI()
     {
@@ -20,13 +28,13 @@ public class NetworkConnectionManager : MonoBehaviour
         if (!connect)
         {
             Debug.Log("Sally gg");
-            var m_IPToConnectTo = GUILayout.TextField(_adress.AddressData.Address);
-            var port = ushort.Parse(GUILayout.TextField(_adress.AddressData.Port.ToString()));
+             m_IPToConnectTo = GUILayout.TextField(m_IPToConnectTo);
+             _port = ushort.Parse(GUILayout.TextField(_port.ToString()));
 
 #if UNITY_EDITOR
             if (GUILayout.Button("Host"))
             {
-                (networkManager.NetworkConfig.NetworkTransport as UnityTransport).SetConnectionData(m_IPToConnectTo, port);
+                (networkManager.NetworkConfig.NetworkTransport as UnityTransport).SetConnectionData(m_IPToConnectTo, _port);
                 networkManager.StartHost();
             }
 #endif
@@ -34,7 +42,7 @@ public class NetworkConnectionManager : MonoBehaviour
             if (GUILayout.Button("Client"))
             {
 
-                (networkManager.NetworkConfig.NetworkTransport as UnityTransport).SetConnectionData(m_IPToConnectTo, port);
+                (networkManager.NetworkConfig.NetworkTransport as UnityTransport).SetConnectionData(m_IPToConnectTo, _port);
                 networkManager.StartClient();
             }
 #endif
@@ -42,7 +50,7 @@ public class NetworkConnectionManager : MonoBehaviour
             if (GUILayout.Button("Server"))
             {
 
-                (networkManager.NetworkConfig.NetworkTransport as UnityTransport).SetConnectionData(m_IPToConnectTo, port);
+                (networkManager.NetworkConfig.NetworkTransport as UnityTransport).SetConnectionData(m_IPToConnectTo, _port);
                 networkManager.StartServer();
             }
 #endif
