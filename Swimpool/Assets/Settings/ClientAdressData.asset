@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ffd5deb43786948aeca7bc664e00e6, type: 3}
+  m_Name: ClientAdressData
+  m_EditorClassIdentifier: 
+  AddressData:
+    Address: 79.139.162.172
+    Port: 50000
+    ServerListenAddress: 0.0.0.0

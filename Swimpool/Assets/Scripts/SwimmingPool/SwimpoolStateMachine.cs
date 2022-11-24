@@ -40,14 +40,6 @@ public class SwimpoolStateMachine : NetworkBehaviour, IStateSwitcher<BaseState>
         SetStartState();
     }
 
-
-
-    public override void OnNetworkDespawn()
-    {
-        base.OnNetworkDespawn();
-        _currentState.DesactivateState();
-    }
-
     public void Switcher(BaseState newState)
     {
         if (_currentState != null)
