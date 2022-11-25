@@ -20,11 +20,17 @@ public class NetworkConnectionManager : MonoBehaviour
 
     private void OnGUI()
     {
+        //TODO magic value. remove after good menu
+        //TODO dynamic UI
+        var screenMiddleX = Screen.width  / 2 - 150; // magic
+        var screenMiddleY = Screen.height / 2 ;
 
-        GUILayout.BeginArea(new Rect(10, 10, 300, 600));
+        GUILayout.BeginArea(new Rect(screenMiddleX, screenMiddleY, 300, 600)); // magic
+
         var networkManager = NetworkManager.Singleton;
 
         var connect = (networkManager.IsClient || networkManager.IsServer);
+        Debug.Log("Sally connetc " + !connect);
         if (!connect)
         {
 #if UNITY_EDITOR
@@ -39,21 +45,21 @@ public class NetworkConnectionManager : MonoBehaviour
             }
 #endif
 #if CLIENT || UNITY_EDITOR
-            if (GUILayout.Button("Client"))
+            if (GUILayout.Button("Connect to server"))
             {
                 (networkManager.NetworkConfig.NetworkTransport as UnityTransport).SetConnectionData(m_IPToConnectTo, _port);
                 networkManager.StartClient();
             }
 #endif
 #if SERVER || UNITY_EDITOR
-            if (GUILayout.Button("Server"))
+            if (GUILayout.Button("Start Server"))
             {
                 (networkManager.NetworkConfig.NetworkTransport as UnityTransport).SetConnectionData(m_IPToConnectTo, _port);
                 networkManager.StartServer();
             }
 #endif
         }
-#if SERVER && !UNITY_EDITOR
+#if SERVER 
         else
         if (GUILayout.Button("Stop server"))
         {

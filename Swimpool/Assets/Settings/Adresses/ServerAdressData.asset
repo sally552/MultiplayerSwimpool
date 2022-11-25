@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ServerAdressData
   m_EditorClassIdentifier: 
   AddressData:
-    Address: 192.168.1.50
+    Address: 192.168.1.71
     Port: 50000
     ServerListenAddress: 0.0.0.0
