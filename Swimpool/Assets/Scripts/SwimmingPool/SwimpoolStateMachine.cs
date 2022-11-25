@@ -30,14 +30,14 @@ public class SwimpoolStateMachine : NetworkBehaviour, IStateSwitcher<BaseState>
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
-
+        SetStartState();
         if (!IsClient)
         {
             enabled = false;
             return;
         }
        
-        SetStartState();
+        
     }
 
     public void Switcher(BaseState newState)

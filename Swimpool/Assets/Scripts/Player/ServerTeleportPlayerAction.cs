@@ -5,6 +5,7 @@ using UnityEngine;
 [DefaultExecutionOrder(0)] 
 public class ServerTeleportPlayerAction : NetworkBehaviour, ITeleportAction, ICollisionAction
 {
+#if UNITY_STANDALONE
     public event Action<ulong, Action> TeleportEvent;
     public event Action<ulong, Action> CollisionActionEvent;
 
@@ -64,4 +65,5 @@ public class ServerTeleportPlayerAction : NetworkBehaviour, ITeleportAction, ICo
     {
         CollisionActionEvent(NetworkObjectId, null);
     }
+#endif
 }

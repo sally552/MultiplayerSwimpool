@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -30,9 +27,6 @@ public class PCClientPlayerMovement : PlayerMovement
         _controller = GetComponent<CharacterController>();
         _teleportAction = GetComponent<ITeleportAction>();
         _camera = _playerCamera.transform;
-
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     public override void OnNetworkSpawn()
